@@ -1,0 +1,76 @@
+<!doctype html>
+	<html lang="en">
+	  <head>
+	    <meta charset="utf-8">
+	    <title>For more info...</title>
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Information Just Search it up!</th>
+  </tr>
+  <tr>
+    <td>birthplace</td>
+    <td>Boston</td> 
+  </tr>
+  <tr>
+    <td>favorite food</td>
+    <td>ramen or padthai</td>
+  </tr>
+  <tr>
+    <td>favorite subject</td>
+    <td>Math</td>
+  </tr>
+  <tr>
+    <td>2nd language</td>
+    <td>English I speak Korean</td>
+  <tr>
+    <td>Age</td>
+    <td>I am 14 years old!</td>
+  <tr>
+    <td>Birthdate</td>
+    <td>March 3rd 2004</td>
+  <tr>
+    <td>Hobbies</td>
+    <td>Eating or Sleeping</td>
+   <tr>
+    <td>What I like to do</td>
+    <td>Search up memes</td>
+    <tr>
+    <td>Favorite Musician</td>
+    <td>The Beatles and Queen</td>
+   <tr>
+    <td>Politician I like</td>
+    <td>Obama</td>
+  </tr>
+</table>
+<body>
+ <a href="index.html">Home</a>
+      <a href="portfolio.html">About Me</a>
+      <a href="hobbys.html">My Hobbies</a>
+      <a href="accomplishment.html">My Accomplishments</a>
+      <a href="Yourface.html">Portfolio!</a>
+ </body>
+<script>
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+</script>
